@@ -5,7 +5,7 @@ function App() {
     <div style={{ fontFamily: "Arial, sans-serif", textAlign: "center" }}>
       {/* Header */}
       <header style={{ background: "#282c34", padding: "20px", color: "white" }}>
-        <h1>🚀 My React Webpage</h1>
+        <h1>🚀 My React Webpage narayan narayan</h1>
         <nav>
           <a href="#" style={{ color: "white", margin: "0 15px" }}>Home</a>
           <a href="#" style={{ color: "white", margin: "0 15px" }}>About</a>
