@@ -1,20 +1,23 @@
-# Step 1: Node base image
+# Step 1: Base image
 FROM node:18
 
-# Step 2: Work directory set karo
+# Step 2: Working directory
 WORKDIR /app
 
-# Step 3: package.json aur package-lock.json copy karo
+# Step 3: Copy package files first (to leverage Docker cache)
 COPY package*.json ./
 
-# Step 4: Dependencies install karo
+# Step 4: Install dependencies
 RUN npm install
 
-# Step 5: Project files copy karo
+# Step 5: Copy rest of the app files
 COPY . .
 
-# Step 6: Port expose karo (React dev server ke liye)
+# Step 6: Build React app (for production)
+RUN npm run build
+
+# Step 7: Expose the app port
 EXPOSE 3000
 
-# Step 7: React app start karo
+# Step 8: Start the React app
 CMD ["npm", "start", "--", "--host", "0.0.0.0"]
